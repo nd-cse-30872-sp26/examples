@@ -11,9 +11,9 @@ int count_with_find(vector<int> &numbers) {
     int total = 0;
 
     for (size_t i = 0; i < numbers.size(); i++) {
-    	if (find(numbers.begin() + i + 1, numbers.end(), numbers[i]) != numbers.end()) {
-    	    total++;
-	}
+        if (find(numbers.begin() + i + 1, numbers.end(), numbers[i]) != numbers.end()) {
+            total++;
+        }
     }
 
     return total;
@@ -24,11 +24,11 @@ int count_with_set(vector<int> &numbers) {
     unordered_set<int> seen;
 
     for (auto number : numbers) {
-    	if (seen.count(number)) {
-    	    total++;
-	} else {
-	    seen.insert(number);
-	}
+        if (seen.count(number)) {
+            total++;
+        } else {
+            seen.insert(number);
+        }
     }
 
     return total;
@@ -40,9 +40,9 @@ int count_with_sort(vector<int> &numbers) {
     sort(numbers.begin(), numbers.end());
 
     for (size_t i = 1; i < numbers.size(); i++) {
-    	if (numbers[i] == numbers[i - 1]) {
-    	    total++;
-	}
+        if (numbers[i] == numbers[i - 1]) {
+            total++;
+        }
     }
 
     return total;
@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
     int         number;
 
     while (cin >> number) {
-    	numbers.push_back(number);
+        numbers.push_back(number);
     }
 
     // TODO: Count duplicates
