@@ -6,8 +6,8 @@ import sys
 
 # Functions
 
-LEFT_PBB  = ('(', '[', '{')
-RIGHT_PBB = (')', ']', '}')
+OPEN_SYMBOLS  = ('(', '[', '{')
+CLOSE_SYMBOLS = (')', ']', '}')
 
 def is_pbbmatched(s: str) -> bool:
     # TODO: Process string s using a stack to determine if the symbols are balanced 

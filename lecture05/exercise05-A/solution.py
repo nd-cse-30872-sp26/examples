@@ -6,14 +6,14 @@ import sys
 
 # Functions
 
-LEFT_PBB  = ('(', '[', '{')
-RIGHT_PBB = (')', ']', '}')
+OPEN_SYMBOLS  = ('(', '[', '{')
+CLOSE_SYMBOLS = (')', ']', '}')
 
 def is_pbbmatched(s: str) -> bool:
     stack = []
 
     for symbol in s:
-        if symbol in LEFT_PBB:          # Push stack PBB
+        if symbol in OPEN_SYMBOLS:      # Push stack PBB
             stack.append(symbol)
         else:
             try:
@@ -22,7 +22,7 @@ def is_pbbmatched(s: str) -> bool:
                 return False
 
             # Make sure we have a match
-            if LEFT_PBB.index(top) != RIGHT_PBB.index(symbol):
+            if OPEN_SYMBOLS.index(top) != CLOSE_SYMBOLS.index(symbol):
                 return False
 
     return not stack
