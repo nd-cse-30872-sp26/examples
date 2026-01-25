@@ -15,9 +15,12 @@ def binary_search_iterative(data: list[int], target: int) -> bool:
 
     >>> binary_search_iterative([2, 5, 8, 9], 7)
     False
+
+    >>> binary_search_iterative([2, 5, 8, 9], 12)
+    False
     '''
     start = 0
-    end   = len(data)
+    end   = len(data) - 1
 
     while start <= end:
         middle   = (start + end) // 2
@@ -51,9 +54,12 @@ def binary_search_recursive(
 
     >>> binary_search_recursive([2, 5, 8, 9], 7)
     False
+
+    >>> binary_search_recursive([2, 5, 8, 9], 12)
+    False
     '''
-    start = 0         if start is None else start
-    end   = len(data) if end   is None else end
+    start = 0             if start is None else start
+    end   = len(data) - 1 if end   is None else end
 
     if start > end:
         return False
