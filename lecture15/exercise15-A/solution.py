@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Exercise 10-C: SSSP
+# Exercise 15-A: SSSP
 
 import collections
 import heapq
